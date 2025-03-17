@@ -3,7 +3,7 @@ import ArrayDataProvider = require('ojs/ojarraydataprovider');
 import { ojSelectSingle } from 'ojs/ojselectsingle';
 import 'ojs/ojselectsingle';
 import 'ojs/ojchart'
-import { useMemo, useState } from "preact/hooks";
+import { useEffect, useMemo, useState } from "preact/hooks";
 import * as data from 'text!./data.json';
 
 
@@ -28,17 +28,28 @@ const movies = [
 
 
 export function Dashboard() {
+    //useEffect
+
+
     const [selectedMovie, setSelectedMovie] = useState<string | null>('Avengers: Endgame');
     // const [selectePrevMovie, setSelectedPrevMovie] = useState<string>(null);
 
-    // const moviesCollectionDP = useMemo(() => {
+    const moviesCollectionDP = useMemo(() => {
 
-    //     //moviesDetails.movies[selectedMovie]
-    //     return new ArrayDataProvider(moviesDetails[selectedMovie], {
-    //         keyAttributes: 'id',
-    //     });
+        //moviesDetails.movies[selectedMovie]
+        // const movies = moviesDetails.filter((movie: any) => movie.name === selectedMovie);
+        console.log("data print");
+        
+        console.log(moviesDetails);
 
-    // }, [selectedMovie, setSelectedMovie]);
+        // console.log("oneMovie",moviesDetails[selectedMovie]);
+        
+        
+        // return new ArrayDataProvider(moviesDetails.movies[selectedMovie], {
+        //     keyAttributes: 'id',
+        // });
+
+    }, [selectedMovie, setSelectedMovie]);
     const activitiesDP = new ArrayDataProvider(movies, {
         keyAttributes: 'value'
     });
@@ -46,8 +57,8 @@ export function Dashboard() {
     const valueChanged = (event: ojSelectSingle.valueChanged<string, string>) => {
         setSelectedMovie(event.detail.value);
         // setSelectedPrevMovie(event.detail.previousValue);
-        console.log(event.detail.value);
-        console.log(event.detail);
+        // console.log(event.detail.value);
+        // console.log(event.detail);
         
     }
     
