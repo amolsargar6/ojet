@@ -1,0 +1,64 @@
+{
+    "movies": [
+    {
+        "name": "Avengers: Endgame",
+        "genre": "Action",
+        "box_office": 2797800564,
+        "release_year": 2019
+    },
+    {
+        "name": "Titanic",
+        "genre": "Romance",
+        "box_office": 2201647264,
+        "release_year": 1997
+    },
+    {
+        "name": "Avatar",
+        "genre": "Sci-Fi",
+        "box_office": 2923706023,
+        "release_year": 2009
+    },
+    {
+        "name": "Joker",
+        "genre": "Drama",
+        "box_office": 1074251311,
+        "release_year": 2019
+    },
+    {
+        "name": "The Lion King",
+        "genre": "Animation",
+        "box_office": 1656943394,
+        "release_year": 2019
+    },
+    {
+        "name": "Frozen II",
+        "genre": "Fantasy",
+        "box_office": 1450026933,
+        "release_year": 2019
+    },
+    {
+        "name": "Black Panther",
+        "genre": "Action",
+        "box_office": 1346913161,
+        "release_year": 2018
+    },
+    {
+        "name": "The Dark Knight",
+        "genre": "Action",
+        "box_office": 1004558444,
+        "release_year": 2008
+    },
+    {
+        "name": "It",
+        "genre": "Horror",
+        "box_office": 701842551,
+        "release_year": 2017
+    },
+    {
+        "name": "Inception",
+        "genre": "Sci-Fi",
+        "box_office": 837360806,
+        "release_year": 2010
+    }
+    ]
+}
