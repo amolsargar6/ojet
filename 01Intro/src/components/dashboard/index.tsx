@@ -28,23 +28,23 @@ const movies = [
 
 
 export function Dashboard() {
-    const [selectedMovie, setSelectedMovie] = useState<string>('Avengers: Endgame');
+    const [selectedMovie, setSelectedMovie] = useState<string | null>('Avengers: Endgame');
     // const [selectePrevMovie, setSelectedPrevMovie] = useState<string>(null);
 
-    const moviesCollectionDP = useMemo(() => {
+    // const moviesCollectionDP = useMemo(() => {
 
-        //moviesDetails.movies[selectedMovie]
-        return new ArrayDataProvider(moviesDetails[selectedMovie], {
-            keyAttributes: 'id'
-        });
+    //     //moviesDetails.movies[selectedMovie]
+    //     return new ArrayDataProvider(moviesDetails[selectedMovie], {
+    //         keyAttributes: 'id',
+    //     });
 
-    }, [selectedMovie, setSelectedMovie]);
+    // }, [selectedMovie, setSelectedMovie]);
     const activitiesDP = new ArrayDataProvider(movies, {
         keyAttributes: 'value'
     });
 
     const valueChanged = (event: ojSelectSingle.valueChanged<string, string>) => {
-        //setSelectedMovie(event.detail);
+        setSelectedMovie(event.detail.value);
         // setSelectedPrevMovie(event.detail.previousValue);
         console.log(event.detail.value);
         console.log(event.detail);
@@ -68,7 +68,7 @@ return (
         <oj-chart
             id="pieChart"
             type="pie"
-            data={moviesCollectionDP}
+            //data={moviesCollectionDP}
             animation-on-display="auto"
             animation-on-data-change="auto"
         >
